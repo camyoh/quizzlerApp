@@ -39,9 +39,12 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Button" backgroundImage="Rectangle">
+                                        <state key="normal" title="Verdadero" backgroundImage="Rectangle">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="botonRespuestaPresionado:" destination="BYZ-38-t0r" eventType="touchUpInside" id="swn-LF-JtQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDh-8e-Jf9">
                                         <rect key="frame" x="0.0" y="718" width="374" height="80"/>
@@ -50,9 +53,12 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Button" backgroundImage="Rectangle">
+                                        <state key="normal" title="Falso" backgroundImage="Rectangle">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="botonRespuestaPresionado:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jei-14-MPk"/>
+                                        </connections>
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0GR-F9-ppx">
                                         <rect key="frame" x="0.0" y="808" width="374" height="11"/>
@@ -79,6 +85,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6nF-mK-0iO" secondAttribute="trailing" id="wzm-U7-U5J"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="botonFalso" destination="ZDh-8e-Jf9" id="s10-CV-FAt"/>
+                        <outlet property="botonVerdadero" destination="6uw-hx-GHs" id="ovO-Bm-7RY"/>
+                        <outlet property="labelPregunta" destination="8yP-4t-gGD" id="8CH-qR-PTh"/>
+                        <outlet property="progressBar" destination="0GR-F9-ppx" id="DmF-vH-oWZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
