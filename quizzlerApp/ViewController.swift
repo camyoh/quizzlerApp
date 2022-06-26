@@ -24,11 +24,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        labelPregunta.text = quiz[numeroPregunta]
+        actualizarUI()
     }
 
     @IBAction func botonRespuestaPresionado(_ sender: UIButton) {
         numeroPregunta += 1
+        actualizarUI()
+    }
+    
+    func actualizarUI() {
+        labelPregunta.text = quiz[numeroPregunta]
     }
     
 }
