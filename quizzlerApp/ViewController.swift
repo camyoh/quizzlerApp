@@ -32,9 +32,9 @@ class ViewController: UIViewController {
         let respuestaCorrecta = quiz[numeroPregunta].respuesta
         
         if respuestaSeleccionada == respuestaCorrecta {
-            print("Correcto")
+            sender.backgroundColor = UIColor.green
         } else {
-            print("Incorrecto")
+            sender.backgroundColor = UIColor.red
         }
         
         if numeroPregunta + 1 < quiz.count {
@@ -42,11 +42,14 @@ class ViewController: UIViewController {
         } else {
             numeroPregunta = 0
         }
-        actualizarUI()
+        
+        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(actualizarUI), userInfo: nil, repeats: false)
     }
     
-    func actualizarUI() {
+    @objc func actualizarUI() {
         labelPregunta.text = quiz[numeroPregunta].texto
+        botonFalso.backgroundColor = UIColor.clear
+        botonVerdadero.backgroundColor = UIColor.clear
     }
     
 }
