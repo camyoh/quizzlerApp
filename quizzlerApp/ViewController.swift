@@ -14,9 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var botonFalso: UIButton!
     
     let quiz = [
-        "Las clases son reference type",
-        "Las estructuras son reference type",
-        "Puedo agregar valores nuevos a una tupla"
+        ["Las clases son reference type", "Verdadero"],
+        ["Las estructuras son reference type", "Falso"],
+        ["Puedo agregar valores nuevos a una tupla", "Falso"]
     ]
     
     var numeroPregunta = 0
@@ -28,12 +28,23 @@ class ViewController: UIViewController {
     }
 
     @IBAction func botonRespuestaPresionado(_ sender: UIButton) {
-        numeroPregunta += 1
+        let respuestaSeleccionada = sender.currentTitle
+        let respuestaCorrecta = quiz[numeroPregunta][1]
+        
+        if respuestaSeleccionada == respuestaCorrecta {
+            print("Correcto")
+        } else {
+            print("Incorrecto")
+        }
+        
+        if numeroPregunta + 1 < quiz.count {
+            numeroPregunta += 1
+        }
         actualizarUI()
     }
     
     func actualizarUI() {
-        labelPregunta.text = quiz[numeroPregunta]
+        labelPregunta.text = quiz[numeroPregunta][0]
     }
     
 }
