@@ -39,6 +39,8 @@ class ViewController: UIViewController {
         
         if numeroPregunta + 1 < quiz.count {
             numeroPregunta += 1
+        } else {
+            numeroPregunta = 0
         }
         actualizarUI()
     }
