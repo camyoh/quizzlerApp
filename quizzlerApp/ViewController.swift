@@ -13,13 +13,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var botonVerdadero: UIButton!
     @IBOutlet weak var botonFalso: UIButton!
     
+    let quiz = [
+        "Las clases son reference type",
+        "Las estructuras son reference type",
+        "Puedo agregar valores nuevos a una tupla"
+    ]
+    
+    var numeroPregunta = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        labelPregunta.text = "2^6 = 64"
+        labelPregunta.text = quiz[numeroPregunta]
     }
 
     @IBAction func botonRespuestaPresionado(_ sender: UIButton) {
+        numeroPregunta += 1
     }
     
 }
