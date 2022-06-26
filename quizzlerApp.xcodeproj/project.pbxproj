@@ -60,14 +60,38 @@
 			children = (
 				1CD487912867B35D00DB8E00 /* AppDelegate.swift */,
 				1CD487932867B35D00DB8E00 /* SceneDelegate.swift */,
-				1CD487952867B35D00DB8E00 /* ViewController.swift */,
-				1CD487972867B35D00DB8E00 /* Main.storyboard */,
+				1CD487A728688F7800DB8E00 /* Model */,
+				1CD487A828688F8600DB8E00 /* View */,
+				1CD487A928688F9C00DB8E00 /* Controller */,
 				1CD4879A2867B35F00DB8E00 /* Assets.xcassets */,
 				1CD4879C2867B35F00DB8E00 /* LaunchScreen.storyboard */,
 				1CD4879F2867B35F00DB8E00 /* Info.plist */,
-				1CD487A52867F29600DB8E00 /* Pregunta.swift */,
 			);
 			path = quizzlerApp;
+			sourceTree = "<group>";
+		};
+		1CD487A728688F7800DB8E00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1CD487A52867F29600DB8E00 /* Pregunta.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1CD487A828688F8600DB8E00 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1CD487972867B35D00DB8E00 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1CD487A928688F9C00DB8E00 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1CD487952867B35D00DB8E00 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
