@@ -15,20 +15,29 @@ struct CerebroQuiz {
     ]
     
     private var numeroPregunta = 0
+    private var puntaje = 0
     
-    func verificarPregunta(_ respuesta: String) -> Bool {
-        respuesta == quiz[numeroPregunta].respuesta
+    mutating func verificarPregunta(_ respuesta: String) -> Bool {
+        if respuesta == quiz[numeroPregunta].respuesta {
+            puntaje += 1
+            return true
+        } else {
+            return false
+        }
     }
     
     func obtenerPregunta() -> String { quiz[numeroPregunta].texto }
     
     func obtenerProgreso() -> Float { Float(numeroPregunta + 1) / Float(quiz.count) }
     
+    func obtenerPuntaje() -> String { "\(puntaje)/\(quiz.count)" }
+    
     mutating func siguientePregunta() {
         if numeroPregunta + 1 < quiz.count {
             numeroPregunta += 1
         } else {
             numeroPregunta = 0
+            puntaje = 0
         }
     }
 }

@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var labelPregunta: UILabel!
+    @IBOutlet weak var labelPuntaje: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var botonVerdadero: UIButton!
     @IBOutlet weak var botonFalso: UIButton!
@@ -38,6 +39,7 @@ class ViewController: UIViewController {
     
     @objc func actualizarUI() {
         labelPregunta.text = cerebroQuiz.obtenerPregunta()
+        labelPuntaje.text = "Puntaje: \(cerebroQuiz.obtenerPuntaje())"
         botonFalso.backgroundColor = UIColor.clear
         botonVerdadero.backgroundColor = UIColor.clear
         progressBar.progress = cerebroQuiz.obtenerProgreso()
