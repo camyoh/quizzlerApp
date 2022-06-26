@@ -13,13 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var botonVerdadero: UIButton!
     @IBOutlet weak var botonFalso: UIButton!
     
-    let quiz = [
-        Pregunta(texto: "Las clases son reference type", respuesta: "Verdadero"),
-        Pregunta(texto: "Las estructuras son reference type", respuesta: "Falso"),
-        Pregunta(texto: "Puedo agregar valores nuevos a una tupla", respuesta: "Falso")
-    ]
-    
-    var numeroPregunta = 0
+    var cerebroQuiz = CerebroQuiz()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,29 +22,25 @@ class ViewController: UIViewController {
     }
 
     @IBAction func botonRespuestaPresionado(_ sender: UIButton) {
-        let respuestaSeleccionada = sender.currentTitle
-        let respuestaCorrecta = quiz[numeroPregunta].respuesta
+        let respuestaSeleccionada = sender.currentTitle!
+        let  usuarioRespondioBien =  cerebroQuiz.verificarPregunta(respuestaSeleccionada)
         
-        if respuestaSeleccionada == respuestaCorrecta {
+        if usuarioRespondioBien {
             sender.backgroundColor = UIColor.green
         } else {
             sender.backgroundColor = UIColor.red
         }
         
-        if numeroPregunta + 1 < quiz.count {
-            numeroPregunta += 1
-        } else {
-            numeroPregunta = 0
-        }
+        cerebroQuiz.siguientePregunta()
         
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(actualizarUI), userInfo: nil, repeats: false)
     }
     
     @objc func actualizarUI() {
-        labelPregunta.text = quiz[numeroPregunta].texto
+        labelPregunta.text = cerebroQuiz.obtenerPregunta()
         botonFalso.backgroundColor = UIColor.clear
         botonVerdadero.backgroundColor = UIColor.clear
-        progressBar.progress = Float(numeroPregunta + 1) / Float(quiz.count)
+        progressBar.progress = cerebroQuiz.obtenerProgreso()
     }
     
 }
